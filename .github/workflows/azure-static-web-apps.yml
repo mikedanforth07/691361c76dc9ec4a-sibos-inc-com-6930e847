@@ -21,10 +21,18 @@ jobs:
           lfs: false
       - name: List files for debugging
         run: |
-          echo "Files in repository:"
+          echo "Files in repository root:"
           ls -la
           echo "Checking for index.html:"
-          if [ -f "index.html" ]; then echo "✓ index.html found"; else echo "✗ index.html NOT found"; fi
+          if [ -f "index.html" ]; then 
+            echo "✓ index.html found"
+            echo "File size:"
+            ls -lh index.html
+          else 
+            echo "✗ index.html NOT found"
+            echo "Available HTML files:"
+            find . -name "*.html"
+          fi
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -33,9 +41,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"
+          api_location: ""
           output_location: ""
           skip_app_build: true
-          skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
