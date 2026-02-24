@@ -12,7 +12,7 @@ Website deployment managed by SIMON AI Platform
 This repository is automatically deployed to Azure Static Web Apps via GitHub Actions.
 Content is managed through SIMON's Creative Studio.
 
-**Production URL**: https://simon-cdn-6930e847-fre4hmemfkbbbvep.z01.azurefd.net
+**Production URL**: https://sibos-inc.com
 
 ## Managed by SIMON
 This repository is automatically maintained by SIMON AI Platform.
