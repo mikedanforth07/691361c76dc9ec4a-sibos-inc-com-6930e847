@@ -19,20 +19,27 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: List files for debugging
+      - name: Debug - List all files
         run: |
-          echo "Files in repository root:"
+          echo "=== Current directory ==="
+          pwd
+          echo ""
+          echo "=== Files in root ==="
           ls -la
-          echo "Checking for index.html:"
+          echo ""
+          echo "=== All HTML files in repo ==="
+          find . -name "*.html" -type f
+          echo ""
+          echo "=== Checking index.html specifically ==="
           if [ -f "index.html" ]; then 
-            echo "✓ index.html found"
-            echo "File size:"
-            ls -lh index.html
+            echo "✓ index.html EXISTS"
+            cat index.html | head -20
           else 
-            echo "✗ index.html NOT found"
-            echo "Available HTML files:"
-            find . -name "*.html"
+            echo "✗ index.html MISSING"
           fi
+          echo ""
+          echo "=== Git status ==="
+          git log -1 --stat
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -44,6 +51,7 @@ jobs:
           api_location: ""
           output_location: ""
           skip_app_build: true
+          skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
