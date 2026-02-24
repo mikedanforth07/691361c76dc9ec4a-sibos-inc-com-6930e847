@@ -1,16 +1,27 @@
 {
   "routes": [
     {
-      "route": "/*",
-      "serve": "/*.html",
-      "statusCode": 200
+      "route": "/about-us-page",
+      "serve": "/about-us-page.html"
+    },
+    {
+      "route": "/careers-page",
+      "serve": "/careers-page.html"
+    },
+    {
+      "route": "/contact-page",
+      "serve": "/contact-page.html"
+    },
+    {
+      "route": "/sibos-homepage-v2",
+      "serve": "/sibos-homepage-v2.html"
     }
   ],
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [
-      "/*.{css,scss,js,png,gif,ico,jpg,jpeg,svg,webp}",
-      "/*.json"
+      "*.{css,scss,js,png,gif,ico,jpg,jpeg,svg,webp}",
+      "*.json"
     ]
   }
 }
