@@ -1,9 +1,0 @@
-{
-  "name": "static-website",
-  "version": "1.0.0",
-  "description": "Static HTML website",
-  "scripts": {
-    "build": "echo 'No build required - static HTML'"
-  },
-  "devDependencies": {}
-}
