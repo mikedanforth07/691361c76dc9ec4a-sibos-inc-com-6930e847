@@ -1,8 +1,8 @@
 {
   "routes": [
     {
-      "route": "/about-us-page",
-      "serve": "/about-us-page.html"
+      "route": "/",
+      "serve": "/index.html"
     },
     {
       "route": "/careers-page",
@@ -23,5 +23,11 @@
       "*.{css,scss,js,png,gif,ico,jpg,jpeg,svg,webp}",
       "*.json"
     ]
+  },
+  "platform": {
+    "apiRuntime": "node:16"
+  },
+  "globalHeaders": {
+    "cache-control": "public, max-age=3600"
   }
 }
