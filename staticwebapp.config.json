@@ -13,8 +13,8 @@
       "serve": "/contact-page.html"
     },
     {
-      "route": "/sibos-homepage-v2",
-      "serve": "/sibos-homepage-v2.html"
+      "route": "/sibos-homepage",
+      "serve": "/sibos-homepage.html"
     }
   ],
   "navigationFallback": {
